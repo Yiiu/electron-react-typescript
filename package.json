@@ -1,0 +1,47 @@
+{
+  "name": "electron-react-typescript",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Yiiu <yu.gintoki@gmail.com>",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev:renderer": "reslow start",
+    "dev:main": "tsc -p ./tsconfig.main.json -w",
+    "start": "nodemon --watch dist --exec electron --inspect ./dist/main.js",
+    "pack": "electron-builder --dir --win",
+    "build": "electron-builder --win"
+  },
+  "dependencies": {
+    "@reslow/cli": "^0.2.18",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hot-loader": "latest"
+  },
+  "devDependencies": {
+    "@reslow/plugin-tslint": "0.0.27",
+    "electron": "^4.0.7",
+    "electron-builder": "^20.38.5",
+    "nodemon": "^1.18.10",
+    "tslint": "^5.13.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^3.6.0"
+  },
+  "build": {
+    "productName": "test",
+    "appId": "com.yiiu.sample",
+    "files": [
+      ".reslow/**/*",
+      "./dist/main.js",
+      "./package.json"
+    ],
+    "directories": {
+      "output": "build"
+    }
+  }
+}

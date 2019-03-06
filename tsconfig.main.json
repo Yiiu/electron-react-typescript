@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "module": "commonjs"
+  },
+  "include": [
+    "src/main"
+  ],
+  "exclude": [
+    "src/renderer",
+    "config.js",
+    "dist"
+  ]
+}
